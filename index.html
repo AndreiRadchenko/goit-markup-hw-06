@@ -445,7 +445,12 @@
               id="footer email"
               placeholder="E-mail"
             />
-            <button type="submit" class="button primary submit">Підписатися</button>
+            <button type="submit" class="button primary submit">
+              Підписатися
+              <svg class="send-icon" width="24" height="24">
+                <use href="./images/icon-sprite-compress.svg#icon-send" />
+              </svg>
+            </button>
           </form>
         </div>
       </div>
@@ -483,28 +488,37 @@
                 <use href="./images/icon-sprite-compress.svg#icon-mail"></use>
               </svg>
             </div>
-
-            <label class="modal-label modal-text" for="modal-comment">Коментар</label>
-            <textarea
-              class="modal-textarea modal-text"
-              name="modal-comment"
-              id="modal-comment"
-              cols="30"
-              rows="10"
-              placeholder="Введіть текст"
-            ></textarea>
-            <div class="checkbox-flex">
-              <input
-                class="modal-checkbox"
-                type="checkbox"
-                name="modal-checkbox"
-                id="modal-checkbox"
-              />
-              <label class="modal-label checkbox" for="modal-checkbox"
-                >Погоджуюся з розсилкою та приймаю
-                <a href="" class="agreement-href">Умови договору</a>
-              </label>
+            <div class="textarea-item">
+              <label class="modal-label modal-text" for="modal-comment">Коментар</label>
+              <textarea
+                class="modal-textarea modal-text"
+                name="modal-comment"
+                id="modal-comment"
+                cols="30"
+                rows="10"
+                placeholder="Введіть текст"
+              ></textarea>
             </div>
+
+            <label class="modal-label checkbox" for="modal-checkbox">
+              <div class="checkbox-combo">
+                <input
+                  class="modal-checkbox"
+                  type="checkbox"
+                  name="modal-checkbox"
+                  id="modal-checkbox"
+                />
+                <svg class="checkbox-empty" width="16px" height="15px">
+                  <use href="./images/icon-sprite-compress.svg#icon-check-empty"></use>
+                </svg>
+                <svg class="checkbox-icon" width="16px" height="15px">
+                  <use href="./images/icon-sprite-compress.svg#icon-check"></use>
+                </svg>
+              </div>
+              Погоджуюся з розсилкою та приймаю&nbsp;
+              <a href="" class="agreement-href">Умови договору</a>
+            </label>
+
             <button class="button primary form" type="submit">Надіслати</button>
           </form>
         </div>
