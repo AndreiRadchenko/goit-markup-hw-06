@@ -613,8 +613,9 @@ button {
 input:focus,
 textarea:focus,
 select:focus,
-button:focus {
-  outline: transparent;
+button:focus,
+link:focus {
+  outline: 0.5 solid var(--accent-color);
 }
 .backdrop {
   position: fixed;
@@ -773,6 +774,12 @@ label {
   width: 16px;
   height: 15px;
   margin-right: 8px;
+  color: var(--secondary-text-color);
+  /* border: 1px solid transparent;
+  transition: border-color 250ms var(--timing-function); */
+}
+.checkbox-combo:focus-within {
+  color: var(--accent-color);
 }
 .checkbox-empty {
   position: absolute;
@@ -780,6 +787,7 @@ label {
   left: 0;
   opacity: 1;
   transition: opacity 250ms var(--timing-function);
+  fill: currentColor;
 }
 .checkbox-icon {
   position: absolute;
