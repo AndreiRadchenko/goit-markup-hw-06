@@ -758,7 +758,15 @@ label {
   width: 100%;
   transition: border-color 250ms var(--timing-function);
 }
-
+/* ===============================CHECKBOX========================= */
+.modal-label.checkbox {
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
 .modal-checkbox {
   position: absolute;
   width: 1px;
@@ -769,47 +777,40 @@ label {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.checkbox-combo {
+.checkbox-mod {
   position: relative;
   width: 16px;
   height: 15px;
   margin-right: 8px;
-  color: var(--secondary-text-color);
-  /* border: 1px solid transparent;
-  transition: border-color 250ms var(--timing-function); */
+  background-position: center;
+  background-clip: padding-box;
+  background-size: cover;
+  transform: scale(1);
+
+  transition: opacity 250ms var(--timing-function), transform 250ms var(--timing-function);
 }
-.checkbox-combo:focus-within {
-  color: var(--accent-color);
-}
-.checkbox-empty {
+.checked {
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  transition: opacity 250ms var(--timing-function);
-  fill: currentColor;
-}
-.checkbox-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 250ms var(--timing-function);
-}
-.modal-checkbox:checked ~ .checkbox-icon {
-  opacity: 1;
-}
-.modal-checkbox:checked ~ .checkbox-empty {
+  top: auto;
+  left: auto;
+  background-image: url(../images/svg/icon-check.svg);
   opacity: 0;
 }
-.modal-label.checkbox {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-  /* margin-bottom: 0;
-  margin-left: 0; */
+.unchecked {
+  position: absolute;
+  top: auto;
+  left: auto;
+  background-image: url(../images/svg/checkbox-empty.svg);
+  opacity: 1;
+}
+.modal-label.checkbox:focus-within .checkbox-mod {
+  transform: scale(1.1);
+}
+.modal-checkbox:checked + .checkbox-mod > .checked {
+  opacity: 1;
+}
+.modal-checkbox:checked + .checkbox-mod > .unchecked {
+  opacity: 0;
 }
 .button.primary.form {
   width: 200px;
